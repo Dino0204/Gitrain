@@ -6,10 +6,13 @@ const whiteMat = new THREE.MeshStandardMaterial({
   side: THREE.DoubleSide,
 });
 
-const floorGeo = new THREE.PlaneGeometry(30, 30);
-const ceilingGeo = new THREE.PlaneGeometry(30, 30);
-const wallWideGeo = new THREE.PlaneGeometry(30, 6);
-const wallDeepGeo = new THREE.PlaneGeometry(30, 6);
+const SIZE = 100;
+const HALF = SIZE / 2;
+const WALL_HEIGHT = 60;
+
+const floorGeo = new THREE.PlaneGeometry(SIZE, SIZE);
+const ceilingGeo = new THREE.PlaneGeometry(SIZE, SIZE);
+const wallGeo = new THREE.PlaneGeometry(SIZE, WALL_HEIGHT);
 
 export function WhiteBox() {
   return (
@@ -27,38 +30,38 @@ export function WhiteBox() {
         geometry={ceilingGeo}
         material={whiteMat}
         rotation={[Math.PI / 2, 0, 0]}
-        position={[0, 6, 0]}
+        position={[0, WALL_HEIGHT, 0]}
         receiveShadow
       />
-      {/* 앞벽 (z = -15) */}
+      {/* 앞벽 (z = -HALF) */}
       <mesh
-        geometry={wallWideGeo}
+        geometry={wallGeo}
         material={whiteMat}
-        position={[0, 3, -15]}
+        position={[0, WALL_HEIGHT / 2, -HALF]}
         receiveShadow
       />
-      {/* 뒷벽 (z = +15) */}
+      {/* 뒷벽 (z = +HALF) */}
       <mesh
-        geometry={wallWideGeo}
+        geometry={wallGeo}
         material={whiteMat}
         rotation={[0, Math.PI, 0]}
-        position={[0, 3, 15]}
+        position={[0, WALL_HEIGHT / 2, HALF]}
         receiveShadow
       />
-      {/* 좌벽 (x = -15) */}
+      {/* 좌벽 (x = -HALF) */}
       <mesh
-        geometry={wallDeepGeo}
+        geometry={wallGeo}
         material={whiteMat}
         rotation={[0, Math.PI / 2, 0]}
-        position={[-15, 3, 0]}
+        position={[-HALF, WALL_HEIGHT / 2, 0]}
         receiveShadow
       />
-      {/* 우벽 (x = +15) */}
+      {/* 우벽 (x = +HALF) */}
       <mesh
-        geometry={wallDeepGeo}
+        geometry={wallGeo}
         material={whiteMat}
         rotation={[0, -Math.PI / 2, 0]}
-        position={[15, 3, 0]}
+        position={[HALF, WALL_HEIGHT / 2, 0]}
         receiveShadow
       />
     </group>

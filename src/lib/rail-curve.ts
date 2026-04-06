@@ -18,3 +18,5 @@ export const railCurve = new THREE.CatmullRomCurve3(
 
 export const RAIL_GAUGE = 1.435;
 export const SPEED = 0.01;
+export const TRAIN_OFFSET = 0.05;
+export const trainT = { current: 0 };
