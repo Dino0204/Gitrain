@@ -22,7 +22,7 @@ bun run lint     # Run ESLint
 
 ## Design System
 
-Theme is defined via CSS variables in `app/globals.css` — **no tailwind.config.ts** (TailwindCSS v4 uses `@theme inline`).
+Theme is defined via CSS variables in `src/index.css` — **no tailwind.config.ts** (TailwindCSS v4 uses `@theme inline`).
 
 **Color tokens**: Not Defined
 
