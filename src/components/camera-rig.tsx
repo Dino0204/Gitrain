@@ -51,7 +51,7 @@ export function CameraRig() {
         render: (get) => get("Camera.view") === "기차 시점",
       },
       topHeight: {
-        value: 80,
+        value: 30,
         min: 20,
         max: 150,
         step: 1,
@@ -75,7 +75,7 @@ export function CameraRig() {
     const cam = state.camera as THREE.PerspectiveCamera;
 
     if (view === "탑뷰") {
-      state.camera.position.set(0, topHeight, 0);
+      state.camera.position.set(0, topHeight, 30);
       state.camera.up.copy(_upZ);
       state.camera.lookAt(0, 0, 0);
       cam.fov = topFov;
