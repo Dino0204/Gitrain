@@ -8,7 +8,7 @@ const CAR_KEYS = ["engine", "front", "mid", "rear"] as const;
 const SCALE = 0.05;
 
 export function TrainEngine() {
-  const { nodes } = useGLTF("/hsr_train.glb");
+  const { nodes } = useGLTF("/hsr_train_performance_draco.glb");
   const groupRefs = useRef<(THREE.Group | null)[]>([]);
 
   const offsetsRef = useRef<number[] | null>(null);
@@ -66,4 +66,4 @@ export function TrainEngine() {
   );
 }
 
-useGLTF.preload("/hsr_train.glb");
+useGLTF.preload("/hsr_train_performance_draco.glb");
