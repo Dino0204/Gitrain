@@ -1,0 +1,12 @@
+"feature":
+  - head-branch:
+      ["^feat/.+", "^feature/.+", "^refactor/.+", "^chore/.+", "^ci/.+"]
+
+"bug":
+  - head-branch: ["^fix/.+", "^hotfix/.+", "^bugfix/.+"]
+
+"documentation":
+  - head-branch: ["^docs/.+"]
+
+"release":
+  - head-branch: ["^release/.+"]

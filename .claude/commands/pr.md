@@ -1,6 +1,6 @@
 ---
 description: 깃허브 PR 생성
-allowed-tools: Bash, mcp__github__create_pull_request, mcp__github__get_me
+allowed-tools: Bash, mcp__github__create_pull_request
 ---
 
 # PR Title & Body Generation
@@ -16,13 +16,11 @@ Changed files:
 !`git diff --stat develop..HEAD`
 
 Diff (excluding lock files):
-!`git diff develop..HEAD -- . ':(exclude)package-lock.json'`
+!`git diff develop..HEAD -- . ':(exclude)bun.lock' ':(exclude)package-lock.json'`
 
 ---
 
 ## Branching Strategy
-
-The PR type is determined by the title format.
 
 | Title Format                                | Base Branch | Condition                                     |
 | ------------------------------------------- | ----------- | --------------------------------------------- |
@@ -39,30 +37,30 @@ The PR type is determined by the title format.
 - **General PR**: `<type>: <Korean summary>` (within 50 characters)
   - Types: `feat`, `fix`, `refactor`, `change`, `remove`, `docs`, `chore`
   - Match type to branch prefix (e.g. `feat/xxx` → `feat:`)
-  - Example: `feat: 기숙사 자습 신청 및 취소 기능 추가`
+  - Example: `feat: 탑뷰 카메라 줌 조절 기능 추가`
 - **Release PR**: `v<major>.<minor>.<patch>` format
   - Example: `v1.2.0`
 
 ## Body Structure
 
-Follow the this PR template. Omit reviewer assignment, labels, and Discord notifications.
+`.github/PULL_REQUEST_TEMPLATE.md` 템플릿을 그대로 사용한다.
 
 ```markdown
 ## #️⃣연관된 이슈
 
 > ex) #이슈번호, #이슈번호
 
-<!-- Write "없음" if no related issue -->
+<!-- 관련 이슈가 없으면 "없음"으로 작성 -->
 
 ## 📝작업 내용
 
 > 이번 PR에서 작업한 내용을 간략히 설명해주세요(이미지 첨부 가능)
 
-<!-- Describe changes based on git diff. Reference FSD layers where applicable -->
+<!-- git diff를 참고해 변경 내용을 작성 -->
 
 ### 스크린샷 (선택)
 
-<!-- Include only if there are UI changes; otherwise remove this section -->
+<!-- UI 변경이 없으면 이 섹션 삭제 -->
 
 ## 💬리뷰 요구사항(선택)
 
@@ -70,7 +68,7 @@ Follow the this PR template. Omit reviewer assignment, labels, and Discord notif
 >
 > ex) 메서드 XXX의 이름을 더 잘 짓고 싶은데 혹시 좋은 명칭이 있을까요?
 
-<!-- Remove this section if not needed -->
+<!-- 리뷰 요구사항이 없으면 이 섹션 삭제 -->
 ```
 
 ## Output & Execution
@@ -80,8 +78,8 @@ Follow the this PR template. Omit reviewer assignment, labels, and Discord notif
    - If the title starts with `v` followed by a digit → `main` (verify current branch is `develop`)
    - Otherwise → `develop`
 3. Create the PR directly using **GitHub MCP** (`mcp__github__create_pull_request`):
-   - `owner`: `Early Employment`
-   - `repo`: `DAWA-Client`
+   - `owner`: `Dino0204`
+   - `repo`: `Train-with-cat`
    - `head`: current branch
    - `base`: branch determined above
 4. Return the created PR URL to the user.
