@@ -1,0 +1,9 @@
+# ── Assignees ─────────────────────────────────────────────────────────────────
+addAssignees: author
+numberOfAssignees: 0
+useAssigneeGroups: false
+# ── 필터링 ────────────────────────────────────────────────────────────────────
+filterLabels:
+  include: []
+  exclude: []
+runOnDraft: true
