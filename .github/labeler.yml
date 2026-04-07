@@ -10,3 +10,6 @@
 
 "release":
   - head-branch: ["^release/.+"]
+
+"enhancement":
+  - head-branch: ["^enhancement/.+"]
