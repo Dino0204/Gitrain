@@ -16,10 +16,10 @@ Recent commits:
 
 ## Issue Types
 
-| Type   | Title Prefix | Label                       | Template           |
-| ------ | ------------ | --------------------------- | ------------------ |
-| `bug`  | `[BUG]`      | `🐌 Issue: Bug`             | bug-report.md      |
-| `feat` | `[Task]`     | `📎 Issue: Feature Request` | feature-request.md |
+| Type   | Title Prefix | Label     | Template           |
+| ------ | ------------ | --------- | ------------------ |
+| `bug`  | `[BUG]`      | `bug`     | bug-report.md      |
+| `feat` | `[Task]`     | `feature` | feature-request.md |
 
 ## Body Templates
 
